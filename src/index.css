@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@theme {
+  --color-background-shop-500: #1e1e1e ;
+  --color-gold-500:#D0B000 ;
+  --color-redbtn-100: #E50000;
+  --color-bg-Card-100:#272727;
+}
