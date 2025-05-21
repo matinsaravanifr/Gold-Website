@@ -7,7 +7,7 @@ export default function Cards({ icon, title, text }) {
         <div className="w-[90%] flex flex-col m-auto ">
           <img className="w-[50px] mt-5" src={icon} alt="icon" />
           <h1 className="text-white font-bold mt-2.5">{title}</h1>
-          <p className="text-white mt-2.5">{text}</p>
+          <p className="text-white mt-2.5 opacity-[50%]">{text}</p>
         </div>
       </div>
     </>
