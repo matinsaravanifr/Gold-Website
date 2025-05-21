@@ -6,6 +6,7 @@ import WhyUsCards from '../components/WhyUsCards/WhyUsCards'
 import Steps from '../components/Steps/Steps'
 import Products from '../components/Products/Products'
 import AboutAs from '../components/AboutUs/AboutAs'
+import Comments from '../components/Comments/Comments'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
     <Steps/>
     <Products/>
     <AboutAs/>
+    <Comments/>
     </>
   )
 }

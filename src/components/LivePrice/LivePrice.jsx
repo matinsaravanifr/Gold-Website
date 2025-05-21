@@ -3,12 +3,14 @@ import ImgLive from "./../../assets/LivePrice/Radio button checked.svg";
 import axios from "axios";
 export default function LivePrice() {
   const [Price, setPrice] = useState(0);
+  const [Amount, setAmount] = useState(0);
   useEffect(() => {
     const fetchprice = () => {
       axios
         .get("https://api.gold-api.com/price/XAU")
         .then((res) => {
           setPrice(res.data.price);
+          
         })
         .catch((e) => {
           console.log(e);
@@ -18,6 +20,12 @@ export default function LivePrice() {
     const update = setInterval(fetchprice, 10000);
     return () => clearInterval(update);
   }, []);
+  const CalculatePrice=(e)=>{
+    let grams=e.target.value
+    setAmount(grams*Price)
+
+    
+  }
   return (
     <>
       <div className="w-[85%] m-auto flex justify-center">
@@ -39,12 +47,13 @@ export default function LivePrice() {
             <h1 className="font-bold">{Price.toFixed(1)}/gm</h1>
             <div>
               <input
+              onChange={CalculatePrice}
                 className="w-[200px] h-[50px] bg-[#DADADA] opacity-[50%] pl-1.5 border-none rounded-[5px] "
                 placeholder="Grams"
                 type="number"
               />
               <div className="w-[200px] h-[50px] bg-[#DADADA] opacity-[50%] pl-1.5 border-none mt-2.5 flex items-center rounded-[5px]">
-                <p>Amount</p>
+                <p>{Amount.toFixed(2)}</p>
               </div>
             </div>
             <button className="w-[200px] h-[50px] bg-redbtn-100 text-white font-bold rounded-[5px] cursor-pointer">
