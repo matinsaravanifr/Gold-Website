@@ -10,7 +10,6 @@ export default function LivePrice() {
         .get("https://api.gold-api.com/price/XAU")
         .then((res) => {
           setPrice(res.data.price);
-          
         })
         .catch((e) => {
           console.log(e);
@@ -20,12 +19,10 @@ export default function LivePrice() {
     const update = setInterval(fetchprice, 10000);
     return () => clearInterval(update);
   }, []);
-  const CalculatePrice=(e)=>{
-    let grams=e.target.value
-    setAmount(grams*Price)
-
-    
-  }
+  const CalculatePrice = (e) => {
+    let grams = e.target.value;
+    setAmount(grams * Price);
+  };
   return (
     <>
       <div className="w-[85%] m-auto flex justify-center">
@@ -47,7 +44,7 @@ export default function LivePrice() {
             <h1 className="font-bold">{Price.toFixed(1)}/gm</h1>
             <div>
               <input
-              onChange={CalculatePrice}
+                onChange={CalculatePrice}
                 className="w-[200px] h-[50px] bg-[#DADADA] opacity-[50%] pl-1.5 border-none rounded-[5px] "
                 placeholder="Grams"
                 type="number"

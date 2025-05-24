@@ -7,6 +7,7 @@ import Steps from '../components/Steps/Steps'
 import Products from '../components/Products/Products'
 import AboutAs from '../components/AboutUs/AboutAs'
 import Comments from '../components/Comments/Comments'
+import Footer from '../components/Footer/Footer'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
     <Products/>
     <AboutAs/>
     <Comments/>
+    <Footer/>
     </>
   )
 }
